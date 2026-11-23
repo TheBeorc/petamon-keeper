@@ -2,6 +2,10 @@
 
 Newest first. One entry per review or port: date, trigger, per-app result, commits.
 
+## 2026-11-23 — backlog cleanup (user decisions)
+- Cattamonio `7639b7b`: `emailSender.test.ts` ported from Doggos (152 tests ✓; verified it fails on a wrong sender).
+- Declined: `home_name` port. Dropped: email preview domain alignment.
+
 ## 2026-11-23 — camera zoom + pinch everywhere (user request)
 - Pinch-to-zoom added to the shared camera hook (`usePinch` in `src/app/camera.ts`, Pointer Events,
   `gesturestart` blocked for iOS Safari, `touch-action: none` on `.cam`); slider kept.

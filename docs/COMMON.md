@@ -38,13 +38,13 @@ Full description: each app's `doc/ARCHITECTURE.md` (Cattamonio's is the referenc
 - **Birds only, by design (never port)**: mandatory location inside Comune di Milano
   (`src/game/milano.ts`, `released` phase in `Hunt.tsx`, `released` result in `capture.ts` /
   `types/app.ts`, 8 s position wait), second photo for birds.
-- **Birds only, port candidate**: short home-screen name via i18n key `home_name` (`store.tsx`, `Onboarding.tsx`).
+- **Birds only, declined for the others**: short home-screen name via i18n key `home_name` (`store.tsx`, `Onboarding.tsx`); the drift in those two files is expected.
 - **Shared since 2026-11-23**: camera zoom (sensor zoom where exposed, else digital centre crop up
   to 5×; 4K stream request; slider + two-finger pinch; `touch-action: none` on `.cam`).
   `src/app/camera.ts` is identical in all apps except the `requestPosition` doc comment.
-- **Doggos + Birds, not Cattamonio**: `src/test/emailSender.test.ts`.
-- **Cosmetic**: `src/routes/lovable/email/auth/preview.ts` ROOT_DOMAIN uses the custom domain in
-  Cattamonio/Birds but `doggos.lovable.app` in Doggos; canonical/og URLs: Cattamonio/Doggos use
+- **Shared since 2026-11-23**: `src/test/emailSender.test.ts` (sender domain check, per-app domain).
+- **Expected, ignore**: `src/routes/lovable/email/auth/preview.ts` preview domains differ per app
+  (Lovable scaffold, preview only; user said drop it). Canonical/og URLs: Cattamonio/Doggos use
   `*.lovable.app`, Birds uses its custom domain.
 
 These are tracked as decisions in `BACKLOG.md`.

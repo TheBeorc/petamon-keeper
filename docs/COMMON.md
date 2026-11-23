@@ -42,6 +42,9 @@ Full description: each app's `doc/ARCHITECTURE.md` (Cattamonio's is the referenc
 - **Shared since 2026-11-23**: camera zoom (sensor zoom where exposed, else digital centre crop up
   to 5×; 4K stream request; slider + two-finger pinch; `touch-action: none` on `.cam`).
   `src/app/camera.ts` is identical in all apps except the `requestPosition` doc comment.
+- **Shared since 2026-11-23**: iPhone login handoff to the Home Screen app (`src/app/handoff.ts`,
+  `installHandoff` in `src/server/core/account.ts`, `installHandoffFn`, `createLoginToken` in the
+  repo port, wiring in `store.tsx` and `Onboarding.tsx`, fake `/admin/generate_link` in e2e stack).
 - **Shared since 2026-11-23**: `src/test/emailSender.test.ts` (sender domain check, per-app domain).
 - **Expected, ignore**: `src/routes/lovable/email/auth/preview.ts` preview domains differ per app
   (Lovable scaffold, preview only; user said drop it). Canonical/og URLs: Cattamonio/Doggos use

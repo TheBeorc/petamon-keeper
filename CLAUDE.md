@@ -33,6 +33,16 @@ python3 scripts/keeper.py status    # what changed since the last review
 If a clone is missing and `git clone` is refused, attach the repo with the `add_repo` tool
 (access: push) first. Install deps per app with `bun install --frozen-lockfile`.
 
+End-to-end tests (`bun run test:e2e -- --trace off`), worth running for anything touching login,
+onboarding or the hunt flow:
+```
+service postgresql start                       # Postgres 16 is preinstalled
+mkdir -p ../<app>/tests/e2e/.bin && cd ../<app>/tests/e2e/.bin && \
+  curl -sSL https://github.com/PostgREST/postgrest/releases/download/v12.2.3/postgrest-v12.2.3-linux-static-x64.tar.xz | tar xJ
+```
+(`tests/e2e/.bin/` is git-ignored.) The fake Supabase is `tests/e2e/stack.mjs`: extend it when a
+change needs an Auth endpoint it doesn't fake yet.
+
 ## Ground rules (the user's decisions — do not relitigate)
 
 - **Autonomy: push directly to `main`** of each app (user's choice, 2026-11-23). Lovable syncs it

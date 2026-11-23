@@ -2,6 +2,21 @@
 
 Newest first. One entry per review or port: date, trigger, per-app result, commits.
 
+## 2026-11-23 — iPhone: no second code after Add to Home Screen (user request)
+- Problem: on iPhone the Home Screen app has its own storage; since iOS 17.2 only cookies are copied
+  from Safari, and the Supabase session lives in localStorage → second OTP email.
+- Fix: while the install guide is open, Safari keeps a one-time Supabase token (admin generateLink,
+  no email; approved players only) in a 30-min SameSite=Strict Secure cookie. The Home Screen app,
+  first launch without a session, exchanges it via verifyOtp({token_hash}) for its own session,
+  deletes the cookie and inherits the accepted data notice. Fallback: normal code login.
+  Android unchanged (installed PWA shares Chrome storage).
+- Cattamonio `2807eed` (built here), Doggos `43d8518`, Birds `41f7dbd` (same patch, no theme tokens).
+  Unit 161 / 161 / 180 ✓; e2e 38 / 38 / 39 ✓ incl. 3 new iPhone scenarios.
+- Birds `7c5840a`: pre-existing stale e2e assertion ("Eyes up, Milan" → "Tel chì el piccion!")
+  and lost exec bit on `scripts/sql-apply.sh` fixed.
+- Not verifiable here: real iPhone (cookie copy at Add to Home Screen) and real Lovable Cloud
+  generateLink. To test on a phone after Publish.
+
 ## 2026-11-23 — backlog cleanup (user decisions)
 - Cattamonio `7639b7b`: `emailSender.test.ts` ported from Doggos (152 tests ✓; verified it fails on a wrong sender).
 - Declined: `home_name` port. Dropped: email preview domain alignment.

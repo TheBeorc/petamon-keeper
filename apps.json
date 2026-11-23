@@ -1,0 +1,150 @@
+{
+  "section": "PET-A-MON",
+  "github_owner": "TheBeorc",
+  "lovable_workspace_id": "Tnv5V4pCY7eBZPEEVg6d",
+  "branch": "main",
+  "apps": [
+    {
+      "id": "cattamonio",
+      "name": "Cattamonio",
+      "repo": "cattamonio",
+      "lovable_project_id": "798cbb08-997b-4c0a-b97f-969a2eb7ee41",
+      "work_session": "session_01SZL2qxu7gxQJunUnVeVg7N",
+      "lineage": "original",
+      "theme": {
+        "tokens": {
+          "app_name": [
+            "Cattamonio",
+            "Cat-a-mon"
+          ],
+          "domain": [
+            "cattamonio.com"
+          ],
+          "nick_prefix": [
+            "micio"
+          ],
+          "community": [
+            "colonia",
+            "Colonia",
+            "colony",
+            "Colony"
+          ],
+          "animal_it": [
+            "gatto",
+            "gatti"
+          ]
+        },
+        "ui_vocabulary": {
+          "animal_en": [
+            "cat",
+            "cats",
+            "Cat",
+            "Cats"
+          ],
+          "capture_word": [
+            "cattura",
+            "catture",
+            "capture",
+            "captures"
+          ]
+        },
+        "community_route": "/colonia"
+      }
+    },
+    {
+      "id": "doggos",
+      "name": "Doggos",
+      "repo": "doggos",
+      "lovable_project_id": "20b09e24-2ca8-423a-a66c-5382f5a7f120",
+      "work_session": "session_01SZL2qwfZpq7f8dCLXZ2pd2",
+      "lineage": "remix of cattamonio (2026-11-20)",
+      "theme": {
+        "tokens": {
+          "app_name": [
+            "Doggos",
+            "Doggos"
+          ],
+          "domain": [
+            "doggos.cattamonio.com"
+          ],
+          "nick_prefix": [
+            "fido"
+          ],
+          "community": [
+            "branco",
+            "Branco",
+            "pack",
+            "Pack"
+          ],
+          "animal_it": [
+            "cane",
+            "cani"
+          ]
+        },
+        "ui_vocabulary": {
+          "animal_en": [
+            "dog",
+            "dogs",
+            "Dog",
+            "Dogs"
+          ],
+          "capture_word": [
+            "cattura",
+            "catture",
+            "capture",
+            "captures"
+          ]
+        },
+        "community_route": "/branco"
+      }
+    },
+    {
+      "id": "birdsofmilan",
+      "name": "Birds of Milan",
+      "repo": "birdsofmilan",
+      "lovable_project_id": "8d77eadc-3fbd-447d-b5ca-a842f924dc86",
+      "work_session": "session_01SZL2qzrXy469sLi4jHt7TN",
+      "lineage": "remix of doggos (2026-11-21)",
+      "theme": {
+        "tokens": {
+          "app_name": [
+            "Birds of Milan",
+            "Birds"
+          ],
+          "domain": [
+            "birdsofmilan.cattamonio.com"
+          ],
+          "nick_prefix": [
+            "pulcino"
+          ],
+          "community": [
+            "stormo",
+            "Stormo",
+            "flock",
+            "Flock"
+          ],
+          "animal_it": [
+            "uccello",
+            "uccelli"
+          ]
+        },
+        "ui_vocabulary": {
+          "animal_en": [
+            "bird",
+            "birds",
+            "Bird",
+            "Birds"
+          ],
+          "capture_word": [
+            "avvistamento",
+            "avvistamenti",
+            "sighting",
+            "sightings"
+          ]
+        },
+        "community_route": "/stormo"
+      }
+    }
+  ],
+  "_theme_note": "theme.tokens lists are index-aligned across apps (element i of one app <-> element i of another) and are what scripts/keeper.py normalises (drift) and rewrites (translate). They are chosen to be safe in code: English 'cat'/'capture' are NOT tokens because they are also identifiers and paths shared by all apps (src/components/cat/, capture.ts). theme.ui_vocabulary is for humans: review UI copy by hand. Translation output is a draft: always check Italian articles/gender (il gatto / l'uccello) and route/component names such as ColoniaRoute."
+}

@@ -47,6 +47,10 @@ If a clone is missing and `git clone` is refused, attach the repo with the `add_
   For those, write the SQL in `doc/sql/` as the apps already do and ask Lovable via
   `mcp__Lovable__send_message` on each project (it costs the user's Lovable credits: one clear
   message per project, then check with `get_message` / `get_diff`). Tell the user when you did.
+- **Preserve each app's specificities — always.** If in doubt whether something is specific to
+  one app, **ask the user before proceeding** (user's rule, 2026-11-23). Confirmed specific so far:
+  Birds of Milan's location rule (must be inside Comune di Milano, else the bird is "released"),
+  its second photo for birds, `src/game/milano.ts`.
 - **Ask before porting** anything that changes *game rules or identity*: a feature that might be
   deliberately exclusive to one app (e.g. Birds' "must be inside Milano" geofence), scoring,
   catalog/species, copy tone, palette. Plumbing and bug fixes don't need asking.

@@ -2,6 +2,12 @@
 
 Newest first. One entry per review or port: date, trigger, per-app result, commits.
 
+## 2026-11-25 — scheduled check
+- Cattamonio: 5 Lovable commits (`c86bedb`..`ec7c4fe`), SEO pass: indexing allowed, sitemap,
+  headings, share text, canonical on cattamonio.com, Search Console tag. Tests 161/161 ✓.
+- Not ported: visibility on Google is an identity decision → asked the user (BACKLOG #1).
+- Doggos, Birds: nothing new.
+
 ## 2026-11-23 — iPhone: no second code after Add to Home Screen (user request)
 - Problem: on iPhone the Home Screen app has its own storage; since iOS 17.2 only cookies are copied
   from Safari, and the Supabase session lives in localStorage → second OTP email.

@@ -2,7 +2,14 @@
 
 ## Needs decision (user)
 
-_(none)_
+1. **SEO from Cattamonio (Lovable, 2026-11-25) → Doggos + Birds?** Cattamonio now allows Google
+   indexing (removed `noindex`), has a `/sitemap.xml` (`src/lib/sitemap.ts`, `staticData.sitemap`
+   on every route), main headings on public pages, page-specific share text, canonical/og:url on
+   `cattamonio.com`, and a Google Search Console verification tag. The siblings are still `noindex`.
+   *Recommendation: port the generic part (sitemap mechanism, headings, share text) only if you want
+   Doggos/Birds findable on Google; the verification tag and domains are per app and need your own
+   Search Console setup per domain.* Counter-argument: these are friends-only invite games; being
+   indexed brings strangers to a login wall and no benefit.
 
 ## Ready to port (no decision needed)
 
